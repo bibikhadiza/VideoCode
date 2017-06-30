@@ -95,6 +95,23 @@ object HelloWorld {
     }
   }
 
+  /* Catch / try is used to catch errors
+  in a catch method you want to be able to catch any errors what might be thrown when your equation is not executable.
+  When creating a try expression we block out our operation within a try function.
+  the catch function takes the try function and evaluates if the equation returns an error
+  when the error is caught by applying the catch function, we can now create
+  cases in which we explicitly assign the return value for any exception. We use the rocket operator which is a lamda operator.
+  In catches we have to set cases for all error catches in order to make sure all error expections are caught.
+  * */
+
+  var stri = "123a"
+  val num = try {
+    stri.toInt
+  } catch {
+    case ex: NumberFormatException => 0
+
+  }
+  println(num)
 
 
 
