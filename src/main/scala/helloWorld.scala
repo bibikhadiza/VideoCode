@@ -76,9 +76,25 @@ object HelloWorld {
 
   println(stuff)
 
-
-
   //for loops in scala consists of a generator, conditionals
+
+  /* Scala match is powerful because it gives you the availability to do pattern matching
+  With matches the first parameter of the match is the truthy conditions
+  and match function then takes in a block parametere that checks to determine
+  if any cases match. We do this by calling a case function and passing alone the projected outcome
+  if and the value is truth then we use a lamda expression to give a return value
+  else we have a fine case statment that takes in anything and returns it to a string in my case.
+  * */
+
+  var fizzbuzz = for(i <- 1 to 20) yield {
+    (i%3, i%5) match {
+      case (0, 0) if i < 5=> "fizzbuzz"
+      case (0, _) => "fizz"
+      case (_, 0) => "buzz"
+      case _ => i.toString
+    }
+  }
+
 
 
 
