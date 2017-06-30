@@ -53,6 +53,37 @@ object HelloWorld {
 
 
 
+  var i = 0  //in while loops you should use the var eyework beacaucse var is mutable
+
+  while (i < 10){
+    println(i)
+    i += 1
+  }
+
+  /*In if else conditions if the true and false values within the condition are not the same type, the return value of the function is a type any */
+
+  // for loops / comprehensions
+
+  val stuff = for {
+    i <- 0 until 10
+    if i%3 == 0 || i%5 == 0
+    sqr = i * i
+    j <- 'a' to 'c'
+  } yield
+   {
+    i -> j
+  }
+
+  println(stuff)
+
+
+
+  //for loops in scala consists of a generator, conditionals
+
+
+
+
+
 
 
 
