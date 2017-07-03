@@ -33,6 +33,7 @@ object Libraries {
     println(concatStrings(lst))
     val Array(a, b, c) = "one two three".split(" ")
     grade(assignments = List(45, 98), quizzes = List(45, 89))
+    threeTuple(math.random)
 
   }
     /*SCALA ARRAYS AND LISTS*/
@@ -125,11 +126,32 @@ object Libraries {
   * and any function whose return value is equal to a type of nil does not have to be provided on function execution
   * */
 
-  def grade(quizzes: List[Int], assignments: List[Int], tests: List[Int] = Nil): Double = {
+  def grade(quizzes: List[Int], assignments: List[Int], tests: List[Int] = Nil) = {
+    0
   }
 
+  /*Currying and Pass-by-Name
 
+  *When the concept of currying is applied we split the arguments
+  * into seperate functions. For example, the first argument will be executed
+  * as a function that then is waiting for the second argument
+  * val plus3 = add(3)_ - the lamda epression is added to take in any value at the second argument
+  * val eight = plus3(5)
+  * apply arguments one at a time or the type inference can be done more intelligently
+  *
+  * Pass by name arg:
+  * pass by name argument is a syntax that takes a argument value and wraps it in a thunk and passes the code in so that everytime the argument is called within the function, the argument gets reevaluated
+   * 
+  *
+  *
+  *
+  * */
 
+  def add(x: Int)(y: Int): Int = x + y
+
+  def threeTuple(a: => Double):(Double, Double, Double) = {
+    (a, a, a)
+  }
 
 
 }
