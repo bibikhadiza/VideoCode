@@ -1,5 +1,11 @@
 package basics
+
+import scala.io.Source
+// source is a class or object used to read text data from a file
 import scala.io.StdIn._
+import java.io.PrintWriter
+
+
 
 /* import the scala io library. Import statements
 * This import function is importing all the methods from the scala io library.
@@ -9,6 +15,15 @@ import scala.io.StdIn._
 object Libraries {
 
   def main(args: Array[String]): Unit = {
+    val source = Source.fromFile("matrix.txt") // returns an iterator. iterators are consumed while used
+    val lines = source.getLines()
+    val matrix = lines.map(_.split(" ").map(_.toDouble)).toArray
+    source.close()
+
+    var pw = new PrintWriter("rowSums.txt")
+    matrix.foreach {row => pw.println(row.sum)}
+    pw.close()
+
     println("What is your name")
     val name = readLine()
     println("How old are you?")
@@ -16,7 +31,6 @@ object Libraries {
     val lst = buildList()
     println(lst)
     println(concatStrings(lst))
-
     val Array(a, b, c) = "one two three".split(" ")
 
   }
@@ -102,6 +116,12 @@ object Libraries {
    * a way to retrieve value and still get no errors is to use patterns
   * you can also use getOrElse
   * res1.getOrElse(0)
+  * */
+
+  /*TEXT FILES
+  *
+  *
+  *
   *
   * */
 
