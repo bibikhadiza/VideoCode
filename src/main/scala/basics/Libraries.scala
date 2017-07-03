@@ -88,9 +88,25 @@ object Libraries {
     case nil => ""
     case h :: t => h + concatStringsPat(t)
   }
-  
+
   /* the _ is scala represents a lamda expression
   a.map(i => i * 2) is equvalent to a.map(_ * 2)
   * */
+
+  /* OPTIONS
+  * in a typed language such as scala since code may or may not have a value
+   * the proper way to handle this is to use a option
+   * the reason for this is so that the language can help you enforce that the function may not have a value
+   * the typed languages will force you to consider this
+   * res0.get returns the value of the option but you should not use the get method all the time because if you use it on none you get an error
+   * a way to retrieve value and still get no errors is to use patterns
+  * you can also use getOrElse
+  * res1.getOrElse(0)
+  *
+  * */
+
+
+
+
 
 }
