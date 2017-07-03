@@ -13,8 +13,13 @@ object Libraries {
     val name = readLine()
     println("How old are you?")
     val age = readInt()
+    val lst = buildList()
+    println(lst)
+    println(concatStrings(lst))
 
+    val Array(a, b, c) = "one two three".split(" ")
 
+  }
     /*SCALA ARRAYS AND LISTS*/
 
     /*They are both created almost equally
@@ -49,13 +54,43 @@ object Libraries {
   this is due to the fact that Doubles can be ranged by any double integer itself.
   10.0.to(20.0).by(0.1)
   
-  *
-  *
-  *
-  *
-  *
+  *all array and list objects are immutable
+  * */
+
+  /*Higher order Sequence Methods
+  * When a function takes a function as an argument or returns a function, it's called a higher order function
+  * examples of higher order methods are map partician find exist foreach count and filter. They all take in a lamda method and return a return
+  * value from the method.
+  * functions that return a boolean is called a predicate
   * */
 
 
+  /* Strings as sequences
+  in scalal a string can be thought of as a sequence of characters
+  Strings are collections in scala
+  * */
+
+  /* Lists, Recursion and Patterns
+  *
+  * */
+
+    def buildList(): List[String] = {
+      val input = readLine()
+      if(input == "quit") Nil else input :: buildList()
+    }
+
+    def concatStrings(words: List[String]): String = {
+      if (words.isEmpty ) ""
+      else (words.head + concatStrings(words.tail))
+    }
+
+  def concatStringsPat(words: List[String]): String = words match {
+    case nil => ""
+    case h :: t => h + concatStringsPat(t)
   }
+  
+  /* the _ is scala represents a lamda expression
+  a.map(i => i * 2) is equvalent to a.map(_ * 2)
+  * */
+
 }
