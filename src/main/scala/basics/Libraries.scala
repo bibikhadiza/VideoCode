@@ -32,6 +32,7 @@ object Libraries {
     println(lst)
     println(concatStrings(lst))
     val Array(a, b, c) = "one two three".split(" ")
+    grade(assignments = List(45, 98), quizzes = List(45, 89))
 
   }
     /*SCALA ARRAYS AND LISTS*/
@@ -118,12 +119,14 @@ object Libraries {
   * res1.getOrElse(0)
   * */
 
-  /*TEXT FILES
-  *
-  *
-  *
-  *
+  /*Named and default arguments
+  * Much like in many other programming languages, In scala we can pass default arguments and arguments that
+  * can be assigned to nil after specifying a argument type. You can overwrite the return type in method declaration
+  * and any function whose return value is equal to a type of nil does not have to be provided on function execution
   * */
+
+  def grade(quizzes: List[Int], assignments: List[Int], tests: List[Int] = Nil): Double = {
+  }
 
 
 
