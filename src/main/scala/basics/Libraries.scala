@@ -106,7 +106,7 @@ object Libraries {
   }
 
   /* the _ is scala represents a lamda expression
-  a.map(i => i * 2) is equvalent to a.map(_ * 2)
+  a.map(i => i * 2) is equivalent to a.map(_ * 2)
   * */
 
   /* OPTIONS
@@ -135,16 +135,13 @@ object Libraries {
   *When the concept of currying is applied we split the arguments
   * into seperate functions. For example, the first argument will be executed
   * as a function that then is waiting for the second argument
-  * val plus3 = add(3)_ - the lamda epression is added to take in any value at the second argument
+  * val plus3 = add(3)_ - the lamda expression is added to take in any value at the second argument
   * val eight = plus3(5)
   * apply arguments one at a time or the type inference can be done more intelligently
   *
   * Pass by name arg:
   * pass by name argument is a syntax that takes a argument value and wraps it in a thunk and passes the code in so that everytime the argument is called within the function, the argument gets reevaluated
-   * 
-  *
-  *
-  *
+   *
   * */
 
   def add(x: Int)(y: Int): Int = x + y
